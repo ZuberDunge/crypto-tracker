@@ -42,7 +42,10 @@ function ListOfStudents() {
                                 <TableCell className="HIDE-ON-PHONE" key={item.id} align="right">{item.course}</TableCell>
                                 <TableCell className="HIDE-ON-PHONE" key={item.id} align="right">{item.batch}</TableCell>
                                 <TableCell key={item.id} align="right"><Link to={`/students/edit/${item.id}`}><i class="fas fa-edit"></i></Link></TableCell>
-                                <TableCell key={item.id} align="right"><i onClick={() => deleteStudent(item.id)} class="fas fa-user-times"></i></TableCell>
+                                <TableCell key={item.id} align="right">
+                                    <span onClick={() => deleteStudent(item.id)} >
+                                        <i class="fas fa-user-times"></i>
+                                    </span></TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
