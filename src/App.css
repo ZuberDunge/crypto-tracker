@@ -1,38 +1,203 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Pacifico&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif !important;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  font-family: 'Montserrat', sans-serif !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
+  padding: 1rem 0;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 2rem;
+  margin: auto;
+  max-width: 1000px;
+  color: white;
+  background-color: #003049;
+}
+
+.navbar li {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+}
+
+.navbar a {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.active {
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+h2 {
+  text-align: center;
+}
+
+.app {
+  max-width: 1400px;
+  width: 100%;
+  margin: auto;
+}
+
+.form-container {
+  background-color: #EAE2B7;
+  max-width: 1000px;
+  width: 100%;
+  margin: auto;
+  padding: 3rem 0;
+}
+
+form {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+  gap: 1.5rem;
+
+}
+
+input {
+
+  opacity: 0.7;
+  transition: 0.1s;
+  background-color: transparent;
+  width: 100%;
+  padding: 0.5rem 0rem;
+  outline: 0;
+  border-bottom: 1px solid #003049;
+  border-right: 0;
+  border-top: 0;
+  border-left: 0;
+}
+
+
+.button {
+  cursor: pointer;
+  background: #FCBF49;
+  margin: 1rem 0;
+  color: #003049;
+  font-weight: 500;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding: 0.5rem 1rem;
+  transition: 0.3s;
+}
+
+input:focus {
+  opacity: 1;
+  border-bottom: 2px solid black;
+}
+
+a {
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #003049;
+  color: white;
+}
+
+.button:hover a {
+
+  color: white;
+}
+
+.student-data {
+  text-align: center;
+}
+
+.student-data {
+  text-align: left;
+  max-width: 500px;
+  margin: auto;
+}
+
+.fa-user-times {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .HIDE-ON-PHONE {
+    display: none !important;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+thead th {
+  font-size: 1rem !important;
+
+  color: #003049 !important;
+}
+
+thead {
+  background-color: #FCBF49;
+
+  border-radius: 0 !important;
+
+}
+
+th {
+  font-weight: 600 !important;
+}
+
+table {
+  border-radius: 0 !important;
+
+}
+
+.add-btn {
+  background-color: #003049;
+  color: white !important;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  border-radius: 0.2rem;
+
+}
+
+tbody tr {
+  font-size: 1rem !important;
+  background-color: #EAE2B7;
+
+}
+
+tbody tr th,
+td {
+  font-size: 1rem !important;
+  color: #003049 !important;
+}
+
+tbody a {
+  color: #003049 !important;
+}
+
+table {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+th,
+td {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.ListOfStudents {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.css-1480iag-MuiInputBase-root-MuiInput-root:after {
+  border-bottom: 2px solid #003049 !important;
+  color: #003049 !important;
+}
+
+label {
+  color: #003049 !important;
 }
