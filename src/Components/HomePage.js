@@ -5,7 +5,7 @@ function Home() {
     return (
         <>
             <Nav />
-            <h2>Home</h2>
+            <h2>CRUD APP</h2>
         </>
     )
 }
