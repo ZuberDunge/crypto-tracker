@@ -4,9 +4,9 @@ function Contact() {
     return (
         <>
             <Nav />
-            <h2>
-                Mat Karo Bhai
-            </h2>
+
+            <h3 className="footer">
+                <a target="_blank" rel="noreferrer" href="https://zuberdunge.tech/">Zuber Dunge <i class="fas fa-external-link-alt"></i></a></h3>
         </>
     )
 }

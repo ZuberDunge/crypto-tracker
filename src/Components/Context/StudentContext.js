@@ -4,11 +4,11 @@ export const StudentContext = createContext()
 
 const StudentContextProvider = (props) => {
     const [students, setStudents] = useState([
-        { id: 1, name: "John Wick", age: 23, course: "WEB DEV", batch: "October" },
-        { id: 2, name: "Shakitman", age: 22, course: "WEB DEV", batch: "November" },
-        { id: 3, name: "Taylor", age: 21, course: "WEB DEV", batch: "September" },
-        { id: 4, name: "Swift", age: 24, course: "WEB DEV", batch: "September" },
-        { id: 5, name: "Thor", age: 22, course: "WEB DEV", batch: "October" },
+        { id: 1, name: "John Wick", age: 23, course: "MERN", batch: "Oct" },
+        { id: 2, name: "Shakitman", age: 22, course: "MEAN", batch: "Nov" },
+        { id: 3, name: "Zuber Dunge", age: 20, course: "MERN", batch: "Aug" },
+        { id: 4, name: "Taylor Swift", age: 24, course: "MERN", batch: "Sep" },
+        { id: 5, name: "Thor", age: 22, course: "MERN", batch: "Oct" },
     ])
 
     // useEffect(() => {
