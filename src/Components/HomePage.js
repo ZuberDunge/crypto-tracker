@@ -1,13 +1,9 @@
 import React from 'react'
-import Nav from './Navbar'
-
+import Aiway from './Aiway';
 function Home() {
-    return (
-        <>
-            <Nav />
-            <h2>CRUD APP</h2>
-        </>
+    return (<>
+        <Aiway />
+    </>
     )
 }
-
 export default Home

@@ -1,17 +1,14 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import Nav from './Navbar'
 import { useParams, useNavigate } from "react-router-dom";
-import { useEffect } from 'react';
-import { StudentContext } from './Context/StudentContext';
+import { CryptoContext } from './Context/CryptoContext';
 import { TextField } from '@mui/material';
+
 function StudentDataView() {
-    const { listStudents } = useContext(StudentContext);
+    const { cryptoArray } = useContext(CryptoContext);
     const { id } = useParams()
     let back = useNavigate();
-    let studentDataaa = listStudents.find(student => student.id === parseInt(id))
-
-
-
+    let singleCoin = cryptoArray.find(coin => coin.id === id)
 
     return (
         <>
@@ -19,12 +16,14 @@ function StudentDataView() {
 
             <div className="form-container">
                 <form>
-                    <TextField disabled id="standard-basic" value={studentDataaa.name} label="Name" name="name" variant="standard" />
-                    <TextField disabled id="standard-basic" value={studentDataaa.age} label="Age" name="age" variant="standard" />
-                    <TextField disabled id="standard-basic" value={studentDataaa.course} label="Course" name="course" variant="standard" />
-                    <TextField disabled id="standard-basic" value={studentDataaa.batch}
-                        label="Batch" name="batch" variant="standard" />
-                    <button className="button" onClick={() => back("/students")} >  Back </button>
+                    <img style={{ width: "50px" }} src={singleCoin.image} alt={singleCoin.id} />
+                    <TextField disabled id="standard-basic" value={singleCoin.name} label="Name" name="name" variant="standard" />
+                    <TextField disabled id="standard-basic" value={singleCoin.low_24h} label="low_24h" name="low_24h" variant="standard" />
+                    <TextField disabled id="standard-basic" value={singleCoin.high_24h} label="high_24" name="high_24" variant="standard" />
+                    <TextField disabled id="standard-basic" value={singleCoin.price_change_percentage_24h} label="change" name="change" variant="standard" />
+                    <TextField disabled id="standard-basic" value={singleCoin.market_cap} label="market_cap" name="market_cap" variant="standard" />
+
+                    <button className="button" onClick={() => back("/")} >  Back </button>
                 </form></div>
         </>
 

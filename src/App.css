@@ -10,14 +10,15 @@ body {
 }
 
 .navbar {
-  padding: 1rem 0;
+  padding: 0 2rem;
+  box-sizing: border-box;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   gap: 2rem;
   margin: auto;
-  max-width: 1000px;
+  max-width: 1400px;
   color: white;
   background-color: #003049;
 }
@@ -130,6 +131,15 @@ a {
   .HIDE-ON-PHONE {
     display: none !important;
   }
+
+  .css-1azl6jz-MuiTableCell-root {
+    width: 50%;
+  }
+
+  .css-1orzy9s {
+    width: 50% !important;
+  }
+
 }
 
 thead th {
