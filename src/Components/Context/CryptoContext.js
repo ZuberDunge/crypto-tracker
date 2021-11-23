@@ -31,12 +31,12 @@ const CryptoContextProvider = (props) => {
     }, []);
     let cryptoArray = cryptoBase;
 
-    const updateOrder = (byVolume) => {
-        setOrder(byVolume)
-    }
+    // const updateOrder = (byVolume) => {
+    //     setOrder(byVolume)
+    // }
 
     return (
-        <CryptoContext.Provider value={{ cryptoArray, updateOrder }}>
+        <CryptoContext.Provider value={{ cryptoArray }}>
             {loading ? <div className="loader"><Messaging color="#1D3557" width="50px" height="50px" /></div> : props.children}
         </CryptoContext.Provider>
     )
