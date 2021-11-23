@@ -1,11 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React from 'react';
 import Home from './Components/HomePage';
-import Main from './Main';
-import Contact from './Components/Contact';
-
 import CryptoContextProvider from './Components/Context/CryptoContext';
-import StudentDataView from './Components/StudentDataView';
+import CoinView from './Components/CoinView';
 function App() {
   return (
     <div className="app">
@@ -13,10 +10,7 @@ function App() {
         <Router>
           <Routes>
             <Route exact path='/' element={<Home />} />
-            <Route path='/students' element={<Main />} />
-            <Route path='/coin/view/:id' element={<StudentDataView />} />
-            <Route path='/contact' element={<Contact />} />
-
+            <Route path='/coin/view/:id' element={<CoinView />} />
           </Routes>
         </Router >
       </CryptoContextProvider>
