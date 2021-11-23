@@ -2,14 +2,12 @@ import React, { useContext } from 'react'
 import Nav from './Navbar'
 import { useParams, useNavigate } from "react-router-dom";
 import { CryptoContext } from './Context/CryptoContext';
-import { TextField } from '@mui/material';
 import { Sparklines, SparklinesLine } from 'react-sparklines';
 import NumberFormat from 'react-number-format';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 

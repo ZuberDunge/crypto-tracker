@@ -3,8 +3,8 @@ import axios from "axios";
 export const CryptoContext = createContext()
 
 const CryptoContextProvider = (props) => {
-
-    const baseURL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=1000&page=1&sparkline=true";
+    const [order, setOrder] = React.useState("market_cap_desc")
+    const baseURL = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=${order}&per_page=1000&page=1&sparkline=true`;
     const [cryptoBase, setCryptoBase] = React.useState([]);
 
 
@@ -15,10 +15,12 @@ const CryptoContextProvider = (props) => {
     }, []);
     let cryptoArray = cryptoBase;
 
-
+    const updateOrder = (byVolume) => {
+        setOrder(byVolume)
+    }
 
     return (
-        <CryptoContext.Provider value={{ cryptoArray }}>
+        <CryptoContext.Provider value={{ cryptoArray, updateOrder }}>
             {props.children}
         </CryptoContext.Provider>
     )

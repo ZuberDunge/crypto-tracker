@@ -18,7 +18,7 @@ import NumberFormat from 'react-number-format';
 import { Sparklines, SparklinesLine } from 'react-sparklines';
 function Aiway() {
 
-    const { cryptoArray } = React.useContext(CryptoContext);
+    const { cryptoArray, updateOrder } = React.useContext(CryptoContext);
     const [search, setSearch] = React.useState("")
 
     const searchFunction = (e) => {
@@ -61,7 +61,7 @@ function Aiway() {
                     <TableHead>
                         <TableRow>
                             <TableCell></TableCell>
-                            <TableCell>COIN</TableCell>
+                            <TableCell  >COIN</TableCell>
                             <TableCell align="left">PRICE</TableCell>
                             <TableCell className="hide-on-tab" align="left">1D Low</TableCell>
                             <TableCell className="hide-on-tab" align="left">1D High</TableCell>

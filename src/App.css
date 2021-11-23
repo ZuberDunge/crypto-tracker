@@ -22,11 +22,6 @@ body {
   background-color: #1D3557;
 }
 
-.navbar li {
-  text-decoration: none;
-  color: white;
-  font-size: 2rem;
-}
 
 .navbar a {
   color: white;
@@ -42,7 +37,6 @@ h2 {
 }
 
 .app {
-
   width: 100%;
   margin: auto;
 }
@@ -54,32 +48,6 @@ h2 {
   margin: auto;
   padding: 3rem 0;
 }
-
-form {
-  width: 90%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  max-width: 400px;
-  margin: auto;
-  gap: 1.5rem;
-
-}
-
-input {
-
-  opacity: 0.7;
-  transition: 0.1s;
-  background-color: transparent;
-  width: 100%;
-  padding: 0.5rem 0rem;
-  outline: 0;
-  border-bottom: 1px solid #1D3557;
-  border-right: 0;
-  border-top: 0;
-  border-left: 0;
-}
-
 
 .button {
   cursor: pointer;
@@ -94,10 +62,7 @@ input {
   transition: 0.3s;
 }
 
-input:focus {
-  opacity: 1;
-  border-bottom: 2px solid black;
-}
+
 
 a {
   text-decoration: none;
@@ -111,20 +76,6 @@ a {
 .button:hover a {
 
   color: white;
-}
-
-.student-data {
-  text-align: center;
-}
-
-.student-data {
-  text-align: left;
-  max-width: 500px;
-  margin: auto;
-}
-
-.fa-user-times {
-  cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {
