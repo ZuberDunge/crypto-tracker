@@ -79,6 +79,10 @@ a {
 }
 
 @media only screen and (max-width: 600px) {
+  .css-1dvstpp-MuiTypography-root {
+    font-size: 1.2rem !important;
+  }
+
   .HIDE-ON-PHONE {
     display: none !important;
   }
@@ -236,14 +240,17 @@ header {
   background-color: #457B9D !important;
 }
 
-.css-1dvstpp-MuiTypography-root {
-  font-weight: 600 !important;
-  font-size: 1.75rem !important;
-}
+
 
 @media only screen and (max-width: 1200px) {
   .hide-on-tab {
     display: none !important;
+  }
+
+  .loader {
+    position: absolute;
+    left: 40% !important;
+    top: 44% !important;
   }
 
   .width-30-tab {
@@ -261,4 +268,16 @@ header {
     width: 30%;
   }
 
+  .loader {
+    position: absolute;
+    left: 22% !important;
+    top: 38% !important;
+  }
+}
+
+.loader {
+  position: absolute;
+
+  left: 40%;
+  top: 40%;
 }

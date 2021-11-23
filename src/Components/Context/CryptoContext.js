@@ -1,5 +1,6 @@
 import React, { createContext, useEffect } from 'react';
 import axios from "axios";
+import { Messaging } from 'react-cssfx-loading/lib';
 export const CryptoContext = createContext()
 
 const CryptoContextProvider = (props) => {
@@ -7,11 +8,26 @@ const CryptoContextProvider = (props) => {
     const baseURL = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=${order}&per_page=1000&page=1&sparkline=true`;
     const [cryptoBase, setCryptoBase] = React.useState([]);
 
+    const [loading, setLoading] = React.useState(true)
+
+    const getCryptoData = async () => {
+        try {
+            const data = await
+                axios
+                    .get(baseURL)
+                    .then(response =>
+                        setCryptoBase(response.data))
+
+            setLoading(false)
+        }
+        catch (e) {
+            console.log(e);
+        }
+    }
 
 
     useEffect(() => {
-        axios.get(baseURL).then(response =>
-            setCryptoBase(response.data)).catch(err => console.log(err))
+        getCryptoData();
     }, []);
     let cryptoArray = cryptoBase;
 
@@ -21,7 +37,7 @@ const CryptoContextProvider = (props) => {
 
     return (
         <CryptoContext.Provider value={{ cryptoArray, updateOrder }}>
-            {props.children}
+            {loading ? <div className="loader"><Messaging color="#1D3557" width="50px" height="50px" /></div> : props.children}
         </CryptoContext.Provider>
     )
 }
