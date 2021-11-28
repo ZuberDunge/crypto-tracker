@@ -18,9 +18,9 @@ import NumberFormat from 'react-number-format';
 import { Sparklines, SparklinesLine } from 'react-sparklines';
 function Main() {
 
-    const { cryptoArray, updateOrderByName, updateOrderByPrice } = React.useContext(CryptoContext);
+    const { cryptoArray } = React.useContext(CryptoContext);
     const [search, setSearch] = React.useState("")
-    const [clicked, setClicked] = React.useState(false)
+
     const searchFunction = (e) => {
         setSearch(e.target.value)
     }
@@ -61,18 +61,10 @@ function Main() {
                     <TableHead>
                         <TableRow>
                             <TableCell></TableCell>
-                            <TableCell  > <div onClick={() => {
+                            <TableCell  >Coin
 
-                                updateOrderByName()
-
-                            }}>Coin
-
-                            </div></TableCell>
-                            <TableCell align="left"><div onClick={() => {
-
-                                updateOrderByPrice()
-
-                            }}>PRICE</div></TableCell>
+                            </TableCell>
+                            <TableCell align="left">PRICE</TableCell>
                             <TableCell className="hide-on-tab" align="left">1D Low</TableCell>
                             <TableCell className="hide-on-tab" align="left">1D High</TableCell>
                             <TableCell className="HIDE-ON-PHONE" align="left">1D Change</TableCell>
