@@ -1,8 +1,8 @@
 import React from 'react'
-import Aiway from './Aiway';
+import Main from './Main';
 function Home() {
     return (<>
-        <Aiway />
+        <Main />
     </>
     )
 }

@@ -16,11 +16,11 @@ import { StyledInputBase, SearchIconWrapper, Search } from '../SearchAppBar';
 import { CryptoContext } from './Context/CryptoContext';
 import NumberFormat from 'react-number-format';
 import { Sparklines, SparklinesLine } from 'react-sparklines';
-function Aiway() {
+function Main() {
 
-    const { cryptoArray, updateOrder } = React.useContext(CryptoContext);
+    const { cryptoArray, updateOrderByName, updateOrderByPrice } = React.useContext(CryptoContext);
     const [search, setSearch] = React.useState("")
-
+    const [clicked, setClicked] = React.useState(false)
     const searchFunction = (e) => {
         setSearch(e.target.value)
     }
@@ -61,12 +61,23 @@ function Aiway() {
                     <TableHead>
                         <TableRow>
                             <TableCell></TableCell>
-                            <TableCell  >COIN</TableCell>
-                            <TableCell align="left">PRICE</TableCell>
+                            <TableCell  > <div onClick={() => {
+
+                                updateOrderByName()
+
+                            }}>Coin
+
+                            </div></TableCell>
+                            <TableCell align="left"><div onClick={() => {
+
+                                updateOrderByPrice()
+
+                            }}>PRICE</div></TableCell>
                             <TableCell className="hide-on-tab" align="left">1D Low</TableCell>
                             <TableCell className="hide-on-tab" align="left">1D High</TableCell>
                             <TableCell className="HIDE-ON-PHONE" align="left">1D Change</TableCell>
-                            <TableCell className="hide-on-800" align="left">Market CAP</TableCell>
+                            <TableCell className="hide-on-800" align="left">
+                                <div>Market CAP</div></TableCell>
                             <TableCell className="HIDE-ON-PHONE width-30-tab" align="left">Chart 7D</TableCell>
                         </TableRow>
                     </TableHead>
@@ -78,9 +89,11 @@ function Aiway() {
                             <TableCell component="th" scope="row"><img style={{ width: "35px" }} src={item.image} alt={item.id} /></TableCell>
                             <TableCell component="th" scope="row"><Link to={`/coin/view/${item.id}`}>{item.name}</Link></TableCell>
                             <TableCell align="left"><NumberFormat thousandSeparator={true} displayType={'text'} thousandsGroupStyle="thousand" prefix={'₹'} value={item.current_price} /></TableCell>
-                            <TableCell className="hide-on-tab" align="left"><NumberFormat thousandSeparator={true} displayType={'text'} thousandsGroupStyle="thousand" prefix={'₹'} value={item.low_24h} /></TableCell>
+                            <TableCell className="hide-on-tab" align="left">
+                                <NumberFormat thousandSeparator={true} displayType={'text'} thousandsGroupStyle="thousand" prefix={'₹'}
+                                    value={item.low_24h ? item.low_24h : "N/A"} /></TableCell>
                             <TableCell className="hide-on-tab" align="left"><NumberFormat thousandSeparator={true} displayType={'text'} thousandsGroupStyle="thousand" prefix={'₹'} value={item.high_24h} /></TableCell>
-                            <TableCell className="HIDE-ON-PHONE" align="left">{item.price_change_percentage_24h.toFixed(2)}%</TableCell>
+                            <TableCell className="HIDE-ON-PHONE" align="left">{item.price_change_percentage_24h ? item.price_change_percentage_24h.toFixed(2) : null}%</TableCell>
                             <TableCell className="hide-on-800" align="left"><NumberFormat thousandSeparator={true} displayType={'text'} thousandsGroupStyle="thousand" prefix={'₹'} value={item.market_cap} /></TableCell>
 
                             <TableCell className="HIDE-ON-PHONE width-30-tab" align="left">
@@ -99,4 +112,4 @@ function Aiway() {
     )
 }
 
-export default Aiway
+export default Main

@@ -4,7 +4,7 @@ import { Messaging } from 'react-cssfx-loading/lib';
 export const CryptoContext = createContext()
 
 const CryptoContextProvider = (props) => {
-    // const [order, setOrder] = React.useState("market_cap_desc")
+
     const baseURL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=50&page=1&sparkline=true";
     const [cryptoBase, setCryptoBase] = React.useState([]);
 
@@ -24,19 +24,26 @@ const CryptoContextProvider = (props) => {
             console.log(e);
         }
     }
-
+    const [order, setOrder] = React.useState([])
 
     useEffect(() => {
         getCryptoData();
     }, []);
+
     let cryptoArray = cryptoBase;
 
-    // const updateOrder = (byVolume) => {
-    //     setOrder(byVolume)
-    // }
-
+    const updateOrderByName = () => {
+        // setCryptoBase(cryptoBase.sort((a, b) => (a.name < b.name ? -1 : 1)))
+        setOrder(cryptoBase.sort((a, b) => (a.name < b.name ? -1 : 1)))
+        // console.log(cryptoBase);
+    }
+    const updateOrderByPrice = () => {
+        // const sortedOrderByPrice = cryptoBase.sort((a, b) => (a.current_price < b.current_price ? -1 : 1));
+        setOrder(cryptoBase.sort((a, b) => (a.current_price < b.current_price ? -1 : 1)))
+        console.log(cryptoBase);
+    }
     return (
-        <CryptoContext.Provider value={{ cryptoArray }}>
+        <CryptoContext.Provider value={{ cryptoArray, updateOrderByName, updateOrderByPrice }}>
             {loading ? <div className="loader"><Messaging color="#1D3557" width="50px" height="50px" /></div> : props.children}
         </CryptoContext.Provider>
     )
